@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alvin Designs - Pricing Guide</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/umd/lucide.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            color: #1a202c;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        /* Animated background shapes */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: drift 20s linear infinite;
+            z-index: 1;
+        }
+        
+        @keyframes drift {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(-50px, -50px) rotate(360deg); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.1); opacity: 0.9; }
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 24px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        /* Enhanced decorative elements */
+        .decoration-1 {
+            position: fixed;
+            top: 10%;
+            right: 10%;
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+            opacity: 0.8;
+            z-index: 2;
+        }
+        
+        .decoration-2 {
+            position: fixed;
+            bottom: 15%;
+            left: 8%;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #48cae4, #023e8a);
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            animation: pulse 4s ease-in-out infinite;
+            z-index: 2;
+        }
+        
+        .decoration-3 {
+            position: fixed;
+            top: 60%;
+            right: 5%;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #a8e6cf, #88d8a3);
+            border-radius: 0% 100% 0% 100%;
+            animation: float 8s ease-in-out infinite reverse;
+            z-index: 2;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: -1;
+        }
+        
+        .header h1 {
+            font-size: 4.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 50%, #c7d2fe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            letter-spacing: -0.05em;
+            text-shadow: 0 0 30px rgba(255,255,255,0.3);
+            position: relative;
+        }
+        
+        .header p {
+            font-size: 1.5rem;
+            color: rgba(255,255,255,0.95);
+            margin-bottom: 25px;
+            font-weight: 400;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .divider {
+            width: 120px;
+            height: 6px;
+            background: linear-gradient(90deg, #fbbf24, #f59e0b, #d97706);
+            margin: 0 auto;
+            border-radius: 3px;
+            box-shadow: 0 4px 15px rgba(251, 191, 36, 0.4);
+        }
+        
+        .section {
+            margin-bottom: 100px;
+            position: relative;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        
+        .section-header p {
+            font-size: 1.125rem;
+            color: rgba(255,255,255,0.85);
+            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        
+        .section-icon {
+            width: 40px;
+            height: 40px;
+            color: #fbbf24;
+            filter: drop-shadow(0 4px 8px rgba(251, 191, 36, 0.3));
+        }
+        
+        /* Enhanced Cards */
+        .card-grid {
+            display: grid;
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .packages-grid {
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        }
+        
+        .addons-grid {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            max-width: 900px;
+        }
+        
+        .support-grid {
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            max-width: 900px;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 40px 32px;
+            box-shadow: 
+                0 25px 50px -12px rgba(0, 0, 0, 0.25),
+                0 0 0 1px rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 
+                0 35px 70px -12px rgba(0, 0, 0, 0.35),
+                0 0 0 1px rgba(255, 255, 255, 0.3);
+        }
+        
+        .card:hover::before {
+            opacity: 1;
+        }
+        
+        .card.popular {
+            border: 2px solid #fbbf24;
+            background: rgba(255, 255, 255, 0.98);
+            transform: scale(1.05);
+        }
+        
+        .card.popular::before {
+            opacity: 1;
+            background: linear-gradient(90deg, #fbbf24, #f59e0b, #d97706);
+        }
+        
+        .card.popular::after {
+            content: "✨ Most Popular ✨";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            color: white;
+            padding: 8px 24px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 700;
+            box-shadow: 0 8px 25px rgba(251, 191, 36, 0.4);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .card h3 {
+            font-size: 1.875rem;
+            font-weight: 800;
+            color: #1a202c;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .card-title-icon {
+            width: 32px;
+            height: 32px;
+            color: #667eea;
+        }
+        
+        .card .price {
+            font-size: 2.75rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 30px;
+            text-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
+        }
+        
+        .card ul {
+            list-style: none;
+            margin-bottom: 30px;
+            space-y: 2;
+        }
+        
+        .card li {
+            padding: 12px 0;
+            color: #4a5568;
+            position: relative;
+            padding-left: 40px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            transition: all 0.2s ease;
+        }
+        
+        .card li:hover {
+            color: #2d3748;
+            transform: translateX(5px);
+        }
+        
+        .feature-icon {
+            position: absolute;
+            left: 0;
+            width: 24px;
+            height: 24px;
+            color: #10b981;
+            background: rgba(16, 185, 129, 0.1);
+            border-radius: 50%;
+            padding: 4px;
+        }
+        
+        /* Enhanced Add-on cards */
+        .addon-card {
+            text-align: center;
+            padding: 36px 24px;
+            position: relative;
+        }
+        
+        .addon-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #667eea);
+            border-radius: 24px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .addon-card:hover::before {
+            opacity: 1;
+        }
+        
+        .addon-icon-wrapper {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .addon-card:hover .addon-icon-wrapper {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .addon-icon {
+            width: 36px;
+            height: 36px;
+            color: white;
+        }
+        
+        .addon-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+        
+        .addon-card .price {
+            font-size: 2rem;
+            margin-bottom: 12px;
+            font-weight: 800;
+        }
+        
+        .addon-card .description {
+            font-size: 1rem;
+            color: #64748b;
+            font-weight: 500;
+        }
+        
+        /* Enhanced Contact section */
+        .contact-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: 50px 40px;
+            box-shadow: 
+                0 25px 50px -12px rgba(0, 0, 0, 0.25),
+                0 0 0 1px rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #10b981, #059669, #047857);
+        }
+        
+        .contact-card h2 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: #1a202c;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+        
+        .contact-card p {
+            color: #4a5568;
+            margin-bottom: 35px;
+            font-size: 1.125rem;
+            line-height: 1.8;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            align-items: center;
+        }
+        
+        @media (min-width: 640px) {
+            .contact-info {
+                flex-direction: row;
+                justify-content: center;
+                gap: 40px;
+            }
+            
+            .contact-divider {
+                width: 2px;
+                height: 50px;
+                background: linear-gradient(to bottom, #e2e8f0, #cbd5e0, #e2e8f0);
+                border-radius: 1px;
+            }
+        }
+        
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.125rem;
+            padding: 12px 24px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            background: rgba(102, 126, 234, 0.1);
+            border: 2px solid transparent;
+        }
+        
+        .contact-link:hover {
+            color: white;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .contact-icon {
+            width: 24px;
+            height: 24px;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 3rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .decoration-1,
+            .decoration-2,
+            .decoration-3 {
+                display: none;
+            }
+            
+            .card {
+                padding: 32px 24px;
+            }
+            
+            .packages-grid,
+            .addons-grid,
+            .support-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="decoration-1"></div>
+    <div class="decoration-2"></div>
+    <div class="decoration-3"></div>
+    
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Alvin Designs</h1>
+            <p>Modern websites for small businesses</p>
+            <div class="divider"></div>
+        </div>
+        
+        <!-- Website Packages -->
+        <section class="section">
+            <div class="section-header">
+                <h2>
+                    <i data-lucide="monitor" class="section-icon"></i>
+                    Website Packages
+                </h2>
+                <p>Choose the perfect package for your business needs</p>
+            </div>
+            
+            <div class="card-grid packages-grid">
+                <div class="card">
+                    <h3>
+                        <i data-lucide="zap" class="card-title-icon"></i>
+                        Basic Presence
+                    </h3>
+                    <div class="price">$500</div>
+                    <ul>
+                        <li>
+                            <i data-lucide="layout" class="feature-icon"></i>
+                            1–3 page website (Home, About, Contact)
+                        </li>
+                        <li>
+                            <i data-lucide="smartphone" class="feature-icon"></i>
+                            Mobile-friendly design
+                        </li>
+                        <li>
+                            <i data-lucide="mail" class="feature-icon"></i>
+                            Contact form
+                        </li>
+                        <li>
+                            <i data-lucide="image" class="feature-icon"></i>
+                            Photo gallery included
+                        </li>
+                        <li>
+                            <i data-lucide="edit-3" class="feature-icon"></i>
+                            1 round of revisions
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="card popular">
+                    <h3>
+                        <i data-lucide="star" class="card-title-icon"></i>
+                        Professional Package
+                    </h3>
+                    <div class="price">$900</div>
+                    <ul>
+                        <li>
+                            <i data-lucide="layout" class="feature-icon"></i>
+                            Up to 5 pages (Home, About, Services, Gallery/Portfolio, Contact)
+                        </li>
+                        <li>
+                            <i data-lucide="palette" class="feature-icon"></i>
+                            Custom layout & branding with logo, colors, and photos
+                        </li>
+                        <li>
+                            <i data-lucide="tablet" class="feature-icon"></i>
+                            Mobile & tablet optimization
+                        </li>
+                        <li>
+                            <i data-lucide="search" class="feature-icon"></i>
+                            Basic SEO setup
+                        </li>
+                        <li>
+                            <i data-lucide="share-2" class="feature-icon"></i>
+                            Social media integration
+                        </li>
+                        <li>
+                            <i data-lucide="map-pin" class="feature-icon"></i>
+                            Google Maps integration
+                        </li>
+                        <li>
+                            <i data-lucide="edit-3" class="feature-icon"></i>
+                            2 rounds of revisions
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3>
+                        <i data-lucide="crown" class="card-title-icon"></i>
+                        Premium Package
+                    </h3>
+                    <div class="price">$1,400</div>
+                    <ul>
+                        <li>
+                            <i data-lucide="layout" class="feature-icon"></i>
+                            Up to 7 pages with more detailed content
+                        </li>
+                        <li>
+                            <i data-lucide="mail" class="feature-icon"></i>
+                            Contact form with direct-to-email inquiries
+                        </li>
+                        <li>
+                            <i data-lucide="trending-up" class="feature-icon"></i>
+                            SEO-friendly setup
+                        </li>
+                        <li>
+                            <i data-lucide="edit-3" class="feature-icon"></i>
+                            3 rounds of revisions
+                        </li>
+                        <li>
+                            <i data-lucide="headphones" class="feature-icon"></i>
+                            30 days of post-launch support
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Add-ons -->
+        <section class="section">
+            <div class="section-header">
+                <h2>
+                    <i data-lucide="plus-circle" class="section-icon"></i>
+                    Add-Ons
+                </h2>
+                <p>Enhance your website with these optional features</p>
+            </div>
+            
+            <div class="card-grid addons-grid">
+                <div class="card addon-card">
+                    <div class="addon-icon-wrapper">
+                        <i data-lucide="file-plus" class="addon-icon"></i>
+                    </div>
+                    <h3>Extra Page</h3>
+                    <div class="price">$100 each</div>
+                    <p class="description">Additional custom pages</p>
+                </div>
+                
+                <div class="card addon-card">
+                    <div class="addon-icon-wrapper">
+                        <i data-lucide="palette" class="addon-icon"></i>
+                    </div>
+                    <h3>Logo Design</h3>
+                    <div class="price">$130</div>
+                    <p class="description">Custom brand identity</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Support Plans -->
+        <section class="section">
+            <div class="section-header">
+                <h2>
+                    <i data-lucide="wrench" class="section-icon"></i>
+                    Monthly Support Plans
+                </h2>
+                <p>Keep your website running smoothly with ongoing support</p>
+            </div>
+            
+            <div class="card-grid support-grid">
+                <div class="card">
+                    <h3>
+                        <i data-lucide="shield" class="card-title-icon"></i>
+                        Basic Maintenance
+                    </h3>
+                    <div class="price">$50/mo</div>
+                    <ul>
+                        <li>
+                            <i data-lucide="server" class="feature-icon"></i>
+                            Hosting included
+                        </li>
+                        <li>
+                            <i data-lucide="shield-check" class="feature-icon"></i>
+                            Security checks & updates
+                        </li>
+                        <li>
+                            <i data-lucide="activity" class="feature-icon"></i>
+                            Technical monitoring
+                        </li>
+                        <li>
+                            <i data-lucide="x-circle" class="feature-icon"></i>
+                            No content edits included
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3>
+                        <i data-lucide="settings" class="card-title-icon"></i>
+                        Maintenance + Edits
+                    </h3>
+                    <div class="price">$125/mo</div>
+                    <ul>
+                        <li>
+                            <i data-lucide="check-circle" class="feature-icon"></i>
+                            Everything in Basic plan
+                        </li>
+                        <li>
+                            <i data-lucide="edit" class="feature-icon"></i>
+                            Up to 2 content edits per month
+                        </li>
+                        <li>
+                            <i data-lucide="zap" class="feature-icon"></i>
+                            Priority support
+                        </li>
+                        <li>
+                            <i data-lucide="gauge" class="feature-icon"></i>
+                            Performance optimization
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact -->
+        <section class="section">
+            <div class="contact-card">
+                <h2>
+                    <i data-lucide="rocket" class="section-icon"></i>
+                    Ready to Get Started?
+                </h2>
+                <p>Let's bring your vision to life with a beautiful, modern website that grows your business.</p>
+                
+                <div class="contact-info">
+                    <a href="tel:2532931550" class="contact-link">
+                        <i data-lucide="phone" class="contact-icon"></i>
+                        (253) 293-1550
+                    </a>
+                    
+                    <div class="contact-divider"></div>
+                    
+                    <a href="mailto:ayealvink@gmail.com" class="contact-link">
+                        <i data-lucide="mail" class="contact-icon"></i>
+                        ayealvink@gmail.com
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
